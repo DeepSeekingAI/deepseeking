@@ -2,26 +2,7 @@
 
 <div align="center">
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <!-- Main graphic group, centered -->
-  <g transform="translate(60, 60)">
-    <!-- D shape -->
-    <path d="M-30 -40 
-             A70 70 0 0 1 -30 40"
-          fill="none"
-          stroke="#2563eb"
-          stroke-width="8"
-          stroke-linecap="round"/>
-    <!-- Eye outer circle -->
-    <circle cx="20" cy="0" r="28" 
-            fill="none" 
-            stroke="#2563eb" 
-            stroke-width="8"/>
-    <!-- Eye focus point -->
-    <circle cx="20" cy="0" r="8" 
-            fill="#2563eb"/>
-  </g>
-</svg>
+<img src="assets/images/logo.svg" alt="DeepSeeking Logo" width="120" height="120">
 
 <h3>DeepSeek AI-driven blockchain prediction market and risk management framework</h3>
 </div>
