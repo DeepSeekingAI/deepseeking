@@ -1,0 +1,89 @@
+# DeepSeeking Framework Configuration
+
+deepseek:
+  api:
+    # DeepSeek API configuration
+    base_url: "https://api.deepseek.ai/v1"
+    timeout: 30
+    # key: Set via DEEPSEEK_API_KEY environment variable
+    
+  models:
+    text:
+      version: "latest"
+      batch_size: 32
+      cache_size: 1000
+      
+    vision:
+      version: "latest"
+      image_size: 512
+      cache_size: 100
+      
+    multimodal:
+      version: "latest"
+      max_text_length: 1024
+      max_image_size: 1024
+      cache_size: 50
+
+blockchain:
+  networks:
+    ethereum:
+      chain_id: 1
+      # rpc_url: Set via ETH_RPC_URL environment variable
+      gas_limit: 2000000
+      confirmation_blocks: 2
+      
+    polygon:
+      chain_id: 137
+      # rpc_url: Set via POLYGON_RPC_URL environment variable
+      gas_limit: 5000000
+      confirmation_blocks: 5
+      
+  contracts:
+    prediction_market:
+      version: "1.0"
+      min_bet: "0.01 ETH"
+      fee_percentage: 1.0
+      
+    insurance_pool:
+      version: "1.0"
+      min_coverage: "1 ETH"
+      premium_rate: 0.5
+
+data:
+  collectors:
+    max_retries: 3
+    timeout: 10
+    batch_size: 100
+    
+  storage:
+    retention_days: 30
+    compression: true
+    backup_enabled: true
+    
+  processors:
+    batch_size: 50
+    max_workers: 4
+    timeout: 30
+
+services:
+  prediction:
+    update_interval: 60  # seconds
+    min_confidence: 0.8
+    cache_ttl: 300
+    
+  hedging:
+    risk_threshold: 0.8
+    rebalance_interval: 3600  # seconds
+    max_exposure: "100 ETH"
+    
+  alert:
+    notification_delay: 5  # seconds
+    channels: ["email", "webhook"]
+    batch_size: 10
+
+logging:
+  level: "INFO"
+  file: "logs/deepseeking.log"
+  max_size: 10485760  # 10MB
+  backup_count: 5
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s" 
